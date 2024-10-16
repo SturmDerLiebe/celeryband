@@ -8,15 +8,15 @@ importers:
 
   .:
     dependencies:
+      db0:
+        specifier: 0.2.1
+        version: 0.2.1(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0))
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
       drizzle-orm:
         specifier: 0.35.0
         version: 0.35.0(@types/pg@8.11.10)(pg@8.13.0)
-      pg:
-        specifier: 8.13.0
-        version: 8.13.0
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -36,9 +36,6 @@ importers:
       '@types/node':
         specifier: 20.16.11
         version: 20.16.11
-      '@types/pg':
-        specifier: 8.11.10
-        version: 8.11.10
       '@typescript-eslint/parser':
         specifier: 7.18.0
         version: 7.18.0(eslint@8.57.1)(typescript@5.6.3)
@@ -2782,6 +2779,26 @@ packages:
       better-sqlite3:
         optional: true
       drizzle-orm:
+        optional: true
+
+  db0@0.2.1:
+    resolution: {integrity: sha512-BWSFmLaCkfyqbSEZBQINMVNjCVfrogi7GQ2RSy1tmtfK9OXlsup6lUMwLsqSD7FbAjD04eWFdXowSHHUp6SE/Q==}
+    peerDependencies:
+      '@electric-sql/pglite': '*'
+      '@libsql/client': '*'
+      better-sqlite3: '*'
+      drizzle-orm: '*'
+      mysql2: '*'
+    peerDependenciesMeta:
+      '@electric-sql/pglite':
+        optional: true
+      '@libsql/client':
+        optional: true
+      better-sqlite3:
+        optional: true
+      drizzle-orm:
+        optional: true
+      mysql2:
         optional: true
 
   debug@2.6.9:
@@ -8128,6 +8145,7 @@ snapshots:
       '@types/node': 20.16.11
       pg-protocol: 1.7.0
       pg-types: 4.0.2
+    optional: true
 
   '@types/resolve@1.20.2': {}
 
@@ -9147,6 +9165,10 @@ snapshots:
       is-data-view: 1.0.1
 
   db0@0.1.4(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0)):
+    optionalDependencies:
+      drizzle-orm: 0.35.0(@types/pg@8.11.10)(pg@8.13.0)
+
+  db0@0.2.1(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0)):
     optionalDependencies:
       drizzle-orm: 0.35.0(@types/pg@8.11.10)(pg@8.13.0)
 
@@ -11161,7 +11183,8 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.0.0
 
-  obuf@1.1.2: {}
+  obuf@1.1.2:
+    optional: true
 
   ofetch@1.4.1:
     dependencies:
@@ -11305,17 +11328,22 @@ snapshots:
   pg-cloudflare@1.1.1:
     optional: true
 
-  pg-connection-string@2.7.0: {}
+  pg-connection-string@2.7.0:
+    optional: true
 
-  pg-int8@1.0.1: {}
+  pg-int8@1.0.1:
+    optional: true
 
-  pg-numeric@1.0.2: {}
+  pg-numeric@1.0.2:
+    optional: true
 
   pg-pool@3.7.0(pg@8.13.0):
     dependencies:
       pg: 8.13.0
+    optional: true
 
-  pg-protocol@1.7.0: {}
+  pg-protocol@1.7.0:
+    optional: true
 
   pg-types@2.2.0:
     dependencies:
@@ -11324,6 +11352,7 @@ snapshots:
       postgres-bytea: 1.0.0
       postgres-date: 1.0.7
       postgres-interval: 1.2.0
+    optional: true
 
   pg-types@4.0.2:
     dependencies:
@@ -11334,6 +11363,7 @@ snapshots:
       postgres-date: 2.1.0
       postgres-interval: 3.0.0
       postgres-range: 1.1.4
+    optional: true
 
   pg@8.13.0:
     dependencies:
@@ -11344,10 +11374,12 @@ snapshots:
       pgpass: 1.0.5
     optionalDependencies:
       pg-cloudflare: 1.1.1
+    optional: true
 
   pgpass@1.0.5:
     dependencies:
       split2: 4.2.0
+    optional: true
 
   picocolors@1.1.0: {}
 
@@ -11575,27 +11607,36 @@ snapshots:
       picocolors: 1.1.0
       source-map-js: 1.2.1
 
-  postgres-array@2.0.0: {}
+  postgres-array@2.0.0:
+    optional: true
 
-  postgres-array@3.0.2: {}
+  postgres-array@3.0.2:
+    optional: true
 
-  postgres-bytea@1.0.0: {}
+  postgres-bytea@1.0.0:
+    optional: true
 
   postgres-bytea@3.0.0:
     dependencies:
       obuf: 1.1.2
+    optional: true
 
-  postgres-date@1.0.7: {}
+  postgres-date@1.0.7:
+    optional: true
 
-  postgres-date@2.1.0: {}
+  postgres-date@2.1.0:
+    optional: true
 
   postgres-interval@1.2.0:
     dependencies:
       xtend: 4.0.2
+    optional: true
 
-  postgres-interval@3.0.0: {}
+  postgres-interval@3.0.0:
+    optional: true
 
-  postgres-range@1.1.4: {}
+  postgres-range@1.1.4:
+    optional: true
 
   prebuild-install@7.1.2:
     dependencies:
@@ -12028,7 +12069,8 @@ snapshots:
 
   speakingurl@14.0.1: {}
 
-  split2@4.2.0: {}
+  split2@4.2.0:
+    optional: true
 
   standard-as-callback@2.1.0: {}
 
@@ -12944,7 +12986,8 @@ snapshots:
       cssfilter: 0.0.10
     optional: true
 
-  xtend@4.0.2: {}
+  xtend@4.0.2:
+    optional: true
 
   y18n@5.0.8: {}
 
