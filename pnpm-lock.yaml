@@ -8,15 +8,18 @@ importers:
 
   .:
     dependencies:
+      better-sqlite3:
+        specifier: 11.4.0
+        version: 11.4.0
       db0:
         specifier: 0.2.1
-        version: 0.2.1(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0))
+        version: 0.2.1(better-sqlite3@11.4.0)(drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0))
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
       drizzle-orm:
         specifier: 0.35.0
-        version: 0.35.0(@types/pg@8.11.10)(pg@8.13.0)
+        version: 0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0)
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -33,6 +36,9 @@ importers:
       '@nuxtjs/i18n':
         specifier: 8.5.5
         version: 8.5.5(magicast@0.3.5)(rollup@4.24.0)(vue@3.5.12(typescript@5.6.3))
+      '@types/better-sqlite3':
+        specifier: 7.6.11
+        version: 7.6.11
       '@types/node':
         specifier: 20.16.11
         version: 20.16.11
@@ -56,7 +62,7 @@ importers:
         version: 2.0.2
       nuxt:
         specifier: 3.13.2
-        version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@20.16.11)(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0))(eslint@8.57.1)(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.24.0)(terser@5.34.1)(typescript@5.6.3)(vite@5.4.9(@types/node@20.16.11)(terser@5.34.1))
+        version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@20.16.11)(better-sqlite3@11.4.0)(drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0))(eslint@8.57.1)(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.24.0)(terser@5.34.1)(typescript@5.6.3)(vite@5.4.9(@types/node@20.16.11)(terser@5.34.1))
       prettier:
         specifier: 3.3.3
         version: 3.3.3
@@ -1917,6 +1923,9 @@ packages:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
 
+  '@types/better-sqlite3@7.6.11':
+    resolution: {integrity: sha512-i8KcD3PgGtGBLl3+mMYA8PdKkButvPyARxA7IQAd6qeslht13qxb1zzO8dRCtE7U3IoJS782zDBAeoKiM695kg==}
+
   '@types/estree@0.0.39':
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
 
@@ -2401,6 +2410,9 @@ packages:
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+
+  better-sqlite3@11.4.0:
+    resolution: {integrity: sha512-B7C9y2aSvtTwDJIz34iUxMjQWmbAYFmpq0Rwf9weYTtx6jUYsUKVt5ePPYlGyLVBoySppPa41PBrzl1ipMhG7A==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -8122,6 +8134,10 @@ snapshots:
 
   '@trysound/sax@0.2.0': {}
 
+  '@types/better-sqlite3@7.6.11':
+    dependencies:
+      '@types/node': 20.16.11
+
   '@types/estree@0.0.39': {}
 
   '@types/estree@1.0.6': {}
@@ -8759,6 +8775,11 @@ snapshots:
 
   base64-js@1.5.1: {}
 
+  better-sqlite3@11.4.0:
+    dependencies:
+      bindings: 1.5.0
+      prebuild-install: 7.1.2
+
   binary-extensions@2.3.0: {}
 
   bindings@1.5.0:
@@ -8772,7 +8793,6 @@ snapshots:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
-    optional: true
 
   boolbase@1.0.0: {}
 
@@ -8804,7 +8824,6 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
-    optional: true
 
   buffer@6.0.3:
     dependencies:
@@ -8910,8 +8929,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  chownr@1.1.4:
-    optional: true
+  chownr@1.1.4: {}
 
   chownr@2.0.0: {}
 
@@ -9164,13 +9182,15 @@ snapshots:
       es-errors: 1.3.0
       is-data-view: 1.0.1
 
-  db0@0.1.4(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0)):
+  db0@0.1.4(better-sqlite3@11.4.0)(drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0)):
     optionalDependencies:
-      drizzle-orm: 0.35.0(@types/pg@8.11.10)(pg@8.13.0)
+      better-sqlite3: 11.4.0
+      drizzle-orm: 0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0)
 
-  db0@0.2.1(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0)):
+  db0@0.2.1(better-sqlite3@11.4.0)(drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0)):
     optionalDependencies:
-      drizzle-orm: 0.35.0(@types/pg@8.11.10)(pg@8.13.0)
+      better-sqlite3: 11.4.0
+      drizzle-orm: 0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0)
 
   debug@2.6.9:
     dependencies:
@@ -9187,12 +9207,10 @@ snapshots:
   decompress-response@6.0.0:
     dependencies:
       mimic-response: 3.1.0
-    optional: true
 
   deep-equal@1.0.1: {}
 
-  deep-extend@0.6.0:
-    optional: true
+  deep-extend@0.6.0: {}
 
   deep-is@0.1.4: {}
 
@@ -9292,9 +9310,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0):
+  drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0):
     optionalDependencies:
+      '@types/better-sqlite3': 7.6.11
       '@types/pg': 8.11.10
+      better-sqlite3: 11.4.0
       pg: 8.13.0
 
   duplexer@0.1.2: {}
@@ -9902,8 +9922,7 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  expand-template@2.0.3:
-    optional: true
+  expand-template@2.0.3: {}
 
   externality@1.0.2:
     dependencies:
@@ -9985,8 +10004,7 @@ snapshots:
 
   fresh@0.5.2: {}
 
-  fs-constants@1.0.0:
-    optional: true
+  fs-constants@1.0.0: {}
 
   fs-extra@11.2.0:
     dependencies:
@@ -10099,8 +10117,7 @@ snapshots:
     dependencies:
       git-up: 7.0.0
 
-  github-from-package@0.0.0:
-    optional: true
+  github-from-package@0.0.0: {}
 
   glob-parent@5.1.2:
     dependencies:
@@ -10792,8 +10809,7 @@ snapshots:
 
   mimic-fn@4.0.0: {}
 
-  mimic-response@3.1.0:
-    optional: true
+  mimic-response@3.1.0: {}
 
   min-indent@1.0.1: {}
 
@@ -10832,8 +10848,7 @@ snapshots:
 
   mitt@3.0.1: {}
 
-  mkdirp-classic@0.5.3:
-    optional: true
+  mkdirp-classic@0.5.3: {}
 
   mkdirp@0.5.6:
     dependencies:
@@ -10868,14 +10883,13 @@ snapshots:
 
   nanotar@0.1.1: {}
 
-  napi-build-utils@1.0.2:
-    optional: true
+  napi-build-utils@1.0.2: {}
 
   natural-compare@1.4.0: {}
 
   negotiator@0.6.3: {}
 
-  nitropack@2.9.7(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0))(magicast@0.3.5):
+  nitropack@2.9.7(better-sqlite3@11.4.0)(drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0))(magicast@0.3.5):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.2
@@ -10898,7 +10912,7 @@ snapshots:
       cookie-es: 1.2.2
       croner: 8.1.2
       crossws: 0.2.4
-      db0: 0.1.4(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0))
+      db0: 0.1.4(better-sqlite3@11.4.0)(drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0))
       defu: 6.1.4
       destr: 2.0.3
       dot-prop: 8.0.2
@@ -10968,7 +10982,6 @@ snapshots:
   node-abi@3.70.0:
     dependencies:
       semver: 7.6.3
-    optional: true
 
   node-addon-api@6.1.0:
     optional: true
@@ -11027,7 +11040,7 @@ snapshots:
 
   nuxi@3.14.0: {}
 
-  nuxt@3.13.2(@parcel/watcher@2.4.1)(@types/node@20.16.11)(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0))(eslint@8.57.1)(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.24.0)(terser@5.34.1)(typescript@5.6.3)(vite@5.4.9(@types/node@20.16.11)(terser@5.34.1)):
+  nuxt@3.13.2(@parcel/watcher@2.4.1)(@types/node@20.16.11)(better-sqlite3@11.4.0)(drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0))(eslint@8.57.1)(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.24.0)(terser@5.34.1)(typescript@5.6.3)(vite@5.4.9(@types/node@20.16.11)(terser@5.34.1)):
     dependencies:
       '@nuxt/devalue': 2.0.2
       '@nuxt/devtools': 1.6.0(rollup@4.24.0)(vite@5.4.9(@types/node@20.16.11)(terser@5.34.1))(vue@3.5.12(typescript@5.6.3))
@@ -11064,7 +11077,7 @@ snapshots:
       magic-string: 0.30.12
       mlly: 1.7.2
       nanotar: 0.1.1
-      nitropack: 2.9.7(drizzle-orm@0.35.0(@types/pg@8.11.10)(pg@8.13.0))(magicast@0.3.5)
+      nitropack: 2.9.7(better-sqlite3@11.4.0)(drizzle-orm@0.35.0(@types/better-sqlite3@7.6.11)(@types/pg@8.11.10)(better-sqlite3@11.4.0)(pg@8.13.0))(magicast@0.3.5)
       nuxi: 3.14.0
       nypm: 0.3.12
       ofetch: 1.4.1
@@ -11652,7 +11665,6 @@ snapshots:
       simple-get: 4.0.1
       tar-fs: 2.1.1
       tunnel-agent: 0.6.0
-    optional: true
 
   prelude-ls@1.2.1: {}
 
@@ -11705,7 +11717,6 @@ snapshots:
       ini: 1.3.8
       minimist: 1.2.8
       strip-json-comments: 2.0.1
-    optional: true
 
   read-cache@1.0.0:
     dependencies:
@@ -11999,15 +12010,13 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-concat@1.0.1:
-    optional: true
+  simple-concat@1.0.1: {}
 
   simple-get@4.0.1:
     dependencies:
       decompress-response: 6.0.0
       once: 1.4.0
       simple-concat: 1.0.1
-    optional: true
 
   simple-git@3.27.0:
     dependencies:
@@ -12170,8 +12179,7 @@ snapshots:
     dependencies:
       min-indent: 1.0.1
 
-  strip-json-comments@2.0.1:
-    optional: true
+  strip-json-comments@2.0.1: {}
 
   strip-json-comments@3.1.1: {}
 
@@ -12276,7 +12284,6 @@ snapshots:
       mkdirp-classic: 0.5.3
       pump: 3.0.2
       tar-stream: 2.2.0
-    optional: true
 
   tar-fs@3.0.6:
     dependencies:
@@ -12294,7 +12301,6 @@ snapshots:
       fs-constants: 1.0.0
       inherits: 2.0.4
       readable-stream: 3.6.2
-    optional: true
 
   tar-stream@3.1.7:
     dependencies:
@@ -12398,7 +12404,6 @@ snapshots:
   tunnel-agent@0.6.0:
     dependencies:
       safe-buffer: 5.2.1
-    optional: true
 
   type-check@0.4.0:
     dependencies:
