@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO: Duplicate div tag! -->
   <div>
     <div class="flex flex-col min-h-full justify-between">
       <div class="p-4 lg:p-8 w-screen overflow-x-hidden">
